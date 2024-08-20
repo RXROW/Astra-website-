@@ -21,7 +21,41 @@ const NavbarClient = ({ user }: any) => {
             <span className="text-lg font-medium">Astra</span>
           </Link>
 
-          {/* Mobile Menu Button */}
+        
+
+          {/* Navigation Links */}
+          <nav
+            className={`${
+              menuOpen ? "block" : "hidden"
+            } md:block absolute md:relative top-14 md:top-0 left-0 md:left-auto w-72 md:w-auto bg-gray-900/70 h-[100vh] md:h-auto md:bg-transparent shadow-md md:shadow-none z-50`}
+          >
+            <ul className="flex flex-col md:flex-row md:items-center justify-center gap-8 p-4 md:p-0">
+              <li>
+                <Link href="#" className="hover:text-foreground/80 text-sm">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-foreground/80 text-sm">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-foreground/80 text-sm">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="#" className="hover:text-foreground/80 text-sm">
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* User Actions */}
+          <div className="flex items-center gap-4">
+              {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
             className="md:hidden text-gray-200 hover:text-gray-500 focus:outline-none"
@@ -59,39 +93,6 @@ const NavbarClient = ({ user }: any) => {
               </svg>
             )}
           </button>
-
-          {/* Navigation Links */}
-          <nav
-            className={`${
-              menuOpen ? "block" : "hidden"
-            } md:block absolute md:relative top-14 md:top-0 left-0 md:left-auto w-72 md:w-auto bg-gray-900/45 md:bg-transparent shadow-md md:shadow-none z-50`}
-          >
-            <ul className="flex flex-col md:flex-row md:items-center justify-center gap-8 p-4 md:p-0">
-              <li>
-                <Link href="#" className="hover:text-foreground/80 text-sm">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-foreground/80 text-sm">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-foreground/80 text-sm">
-                  Features
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-foreground/80 text-sm">
-                  Blog
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          {/* User Actions */}
-          <div className="flex items-center gap-4">
             {user ? (
               <UserButton />
             ) : (
